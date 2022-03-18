@@ -28,3 +28,8 @@ curl --location --request POST 'localhost:8080/case3read' \
     ]
 }'
 ```
+
+## case6
+```shell
+curl --location --request GET 'http://localhost:8080/case3write' 
+```
