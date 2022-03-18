@@ -1,6 +1,7 @@
 package com.example.springmongojson;
 
 import com.example.springmongojson.controller.Case1Controller;
+import com.example.springmongojson.controller.Case2Controller;
 import com.example.springmongojson.model.GroceryItem;
 import com.example.springmongojson.repository.CustomItemRepository;
 import com.example.springmongojson.repository.ItemRepository;
@@ -26,6 +27,9 @@ public class SpringMongoJsonApplication implements CommandLineRunner {
 	@Autowired
 	Case1Controller case1Controller;
 
+	@Autowired
+	Case2Controller case2Controller;
+
 	public static void main(String[] args) {
 		SpringApplication.run(SpringMongoJsonApplication.class, args);
 	}
@@ -33,7 +37,9 @@ public class SpringMongoJsonApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		case1Controller.insert();
+		case2Controller.insert();
+
+//		case1Controller.insert();
 
 
 //		System.out.println("-------------CREATE GROCERY ITEMS-------------------------------\n");
