@@ -37,7 +37,7 @@ public class SpringMongoJsonApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		case2Controller.insert();
+//		case2Controller.insert();
 
 //		case1Controller.insert();
 
