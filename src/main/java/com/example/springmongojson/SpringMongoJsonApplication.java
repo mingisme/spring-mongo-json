@@ -1,5 +1,6 @@
 package com.example.springmongojson;
 
+import com.example.springmongojson.controller.Case1Controller;
 import com.example.springmongojson.model.GroceryItem;
 import com.example.springmongojson.repository.CustomItemRepository;
 import com.example.springmongojson.repository.ItemRepository;
@@ -22,45 +23,52 @@ public class SpringMongoJsonApplication implements CommandLineRunner {
 	@Autowired
 	CustomItemRepository customRepo;
 
+	@Autowired
+	Case1Controller case1Controller;
+
 	public static void main(String[] args) {
 		SpringApplication.run(SpringMongoJsonApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("-------------CREATE GROCERY ITEMS-------------------------------\n");
 
-		createGroceryItems();
+		case1Controller.insert();
 
-		System.out.println("\n----------------SHOW ALL GROCERY ITEMS---------------------------\n");
 
-		showAllGroceryItems();
-
-		System.out.println("\n--------------GET ITEM BY NAME-----------------------------------\n");
-
-		getGroceryItemByName("Whole Wheat Biscuit");
-
-		System.out.println("\n-----------GET ITEMS BY CATEGORY---------------------------------\n");
-
-		getItemsByCategory("millets");
-
-		System.out.println("\n-----------UPDATE CATEGORY NAME OF SNACKS CATEGORY----------------\n");
-
-		updateCategoryName("snacks");
-
-		System.out.println("\n----------DELETE A GROCERY ITEM----------------------------------\n");
-
-		deleteGroceryItem("Kodo Millet");
-
-		System.out.println("\n------------FINAL COUNT OF GROCERY ITEMS-------------------------\n");
-
-		findCountOfGroceryItems();
-
-		System.out.println("\n-------------------THANK YOU---------------------------");
-
-		System.out.println("\n-----------UPDATE QUANTITY OF A GROCERY ITEM------------------------\n");
-
-		updateItemQuantity("Bonny Cheese Crackers Plain", 10);
+//		System.out.println("-------------CREATE GROCERY ITEMS-------------------------------\n");
+//
+//		createGroceryItems();
+//
+//		System.out.println("\n----------------SHOW ALL GROCERY ITEMS---------------------------\n");
+//
+//		showAllGroceryItems();
+//
+//		System.out.println("\n--------------GET ITEM BY NAME-----------------------------------\n");
+//
+//		getGroceryItemByName("Whole Wheat Biscuit");
+//
+//		System.out.println("\n-----------GET ITEMS BY CATEGORY---------------------------------\n");
+//
+//		getItemsByCategory("millets");
+//
+//		System.out.println("\n-----------UPDATE CATEGORY NAME OF SNACKS CATEGORY----------------\n");
+//
+//		updateCategoryName("snacks");
+//
+//		System.out.println("\n----------DELETE A GROCERY ITEM----------------------------------\n");
+//
+//		deleteGroceryItem("Kodo Millet");
+//
+//		System.out.println("\n------------FINAL COUNT OF GROCERY ITEMS-------------------------\n");
+//
+//		findCountOfGroceryItems();
+//
+//		System.out.println("\n-------------------THANK YOU---------------------------");
+//
+//		System.out.println("\n-----------UPDATE QUANTITY OF A GROCERY ITEM------------------------\n");
+//
+//		updateItemQuantity("Bonny Cheese Crackers Plain", 10);
 
 	}
 
