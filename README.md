@@ -16,11 +16,13 @@ curl --location --request POST 'localhost:8080/case3read' \
     "orgId": "oAFSAFXZEW",
     "emissions": [
         {
+            "type":"com.example.springmongojson.model.Fuel",
             "quantity": 2,
             "carbonContent": 1,
             "carbonOxidationRate": 3
         },
         {
+            "type":"com.example.springmongojson.model.Carbonate",
             "quantity": 6,
             "purity": 5,
             "factor": 4

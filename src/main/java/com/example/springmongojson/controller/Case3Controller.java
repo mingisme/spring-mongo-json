@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -53,7 +54,7 @@ public class Case3Controller {
     public String read(@RequestBody SiteEmission siteEmission){
 
         ObjectMapper objectMapper = new ObjectMapper();
-        List<SiteEmission> siteEmissions = siteEmissionRepository.findAll();
+        List<SiteEmission> siteEmissions = Collections.singletonList(siteEmission);
         for(SiteEmission e : siteEmissions){
             System.out.println("class: " + e.getClass());
             String json = objectMapper.writeValueAsString(e);
@@ -66,6 +67,25 @@ public class Case3Controller {
                 System.out.println(js);
             }
         }
+
+        System.out.println("persist to mongodb");
+        siteEmissionRepository.save(siteEmission);
+        System.out.println("persist to mongodb success");
+
+        siteEmissions = siteEmissionRepository.findAll();
+        for(SiteEmission e : siteEmissions){
+            System.out.println("class: " + e.getClass());
+            String json = objectMapper.writeValueAsString(e);
+            System.out.println(json);
+
+            List<Emission> emissions = e.getEmissions();
+            for(Emission e0 : emissions){
+                System.out.println("emission class: " + e0.getClass());
+                String js = objectMapper.writeValueAsString(e0);
+                System.out.println(js);
+            }
+        }
+
 
         return "ok";
     }
