@@ -30,3 +30,7 @@ curl --location --request POST 'localhost:8080/case3read' \
     ]
 }'
 ```
+
+## 7.Parse list as Object Array from HTTP request
+## 8.Persist Object list
+
